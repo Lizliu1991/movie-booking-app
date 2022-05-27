@@ -17,7 +17,7 @@ function App() {
       "https://api.themoviedb.org/3/movie/now_playing?api_key=d83033543a6c7891ee001cf3bb2dac7b";
     const data = await fetch(url);
     const responseJson = await data.json();
-    console.log(responseJson.results);
+
 
     setMovies(responseJson.results);
   };

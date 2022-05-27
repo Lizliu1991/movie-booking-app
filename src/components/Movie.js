@@ -6,6 +6,9 @@ import {
   Form,
   FormLabel,
   FormControl,
+  DropdownButton,
+  Dropdown
+
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +23,7 @@ function Movie({
 
   const time1 = "10:am";
   const time2 = "3:00pm";
+  const time3 = "5:pm"
   const history = useNavigate();
 
   return (
@@ -33,9 +37,9 @@ function Movie({
 
         <div className="ml-8">
           <h1>{original_title}</h1>
-          <p><span className="uppercase font-semibold mr-3" >Release Date: </span>{release_date} </p>
-          <p><span className="uppercase font-semibold mr-3">Rating: </span>{vote_average}</p>
-          <p> <span className="uppercase font-semibold mr-3">Overview:</span> {overview}</p>
+          <p><span className="uppercase font-semibold mr-3" >Release Date: </span>{release_date} </p>
+          <p><span className="uppercase font-semibold mr-3">Rating: </span>{vote_average}</p>
+          <p> <span className="uppercase font-semibold mr-3">Overview:</span> {overview}</p>
           
           <Button variant="primary" onClick={() => setShow(true)}>
             Book Ticket
@@ -60,14 +64,14 @@ function Movie({
             <FormControl type="date" placeholder="Select Date"></FormControl>
           </Form>
           <div className="flex items-center">
-          <div className="flex items-center">
-          <p className="m-3 bg-gray-200 px-2">{time1}</p>
-          <input type="checkbox" class=" checked:bg-blue-500 ..." />
-          </div>
-         <div className="flex items-center ml-5">
-         <p className="ml-3 bg-gray-200 mr-3 m-3 px-2">{time2}</p>
-          <input type="checkbox" class=" checked:bg-blue-500 ..." />
-         </div>
+
+          <DropdownButton variant="secondary" id="dropdown-item-button" title="Select Time" className="mb-5 mt-5">
+
+  <Dropdown.Item as="button">{time1}</Dropdown.Item>
+  <Dropdown.Item as="button">{time2}</Dropdown.Item>
+  <Dropdown.Item as="button">{time3}</Dropdown.Item>
+</DropdownButton>
+         
           </div>
         </Modal.Body>
         <Modal.Footer>
