@@ -3,45 +3,16 @@ import SeatMap from './SeatMap'
 
 function Seat() {
 
-const [seats, setSeats] = useState({
-seat: [
+const [seats, setSeats] = useState(
+ [
     'R1 A','R1 B','R1 C', 'R1 D','R1 E','R1 F',
     'R2 A','R2 B','R2 C', 'R2 D','R2 E','R2 F',
     'R3 A','R3 B','R3 C', 'R3 D','R3 E','R3 F',
     'R4 A','R4 B','R4 C', 'R4 D','R4 E','R4 F',
     'R5 A','R5 B','R5 C', 'R5 D','R5 E','R5 F',
     'R6 A','R6 B','R6 C', 'R6 D','R6 E','R6 F'
-
-
-
-],
-seatAvailable: [
-    'R1 A','R1 B','R1 C', 'R1 D','R1 E','R1 F',
-    'R2 A','R2 B','R2 C', 'R2 D','R2 E','R2 F',
-    'R3 A','R3 B','R3 C', 'R3 D','R3 E','R3 F',
-    'R4 A','R4 B','R4 C', 'R4 D','R4 E','R4 F',
-    'R5 A','R5 B','R5 C', 'R5 D','R5 E','R5 F',
-    'R6 A','R6 B','R6 C', 'R6 D','R6 E','R6 F'
-],
-seatReserved: []
-})
-
-
-// const handleClick = (seats) => {
-// if(seats.seatReserved.indexOf(seats)> -1){
-//     setSeats({
-//        seatAvailable: seats.seatAvailable.concat(seats),
-//        setReserved: seats.seatReserved.filter(res => res !== seats)
-//     })
-// } else {
-//     setSeats({
-//         seatReserved: seats.seatReserved.concat(seats),
-//         seatAvailable: seats.seatAvailable.filter(res => res !== seats)
-//     })
-
-// }
-// }
-
+]
+)
 
   return (
     <div className="flex flex-col items-center justify-center ">

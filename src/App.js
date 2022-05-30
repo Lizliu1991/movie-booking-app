@@ -7,6 +7,7 @@ import MovieList from "./components/MovieList";
 
 import BookSeat from "./components/BookSeat";
 import MovieChoosen from "./components/MovieChoosen";
+import Success from "./Pages/Success"
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -37,6 +38,7 @@ function App() {
               <Route exact="true" element={<MovieList />} path="/" />
               <Route exact="true" element={<MovieChoosen />} path="/:id" />
               <Route exact="true" element={<BookSeat />} path="/bookSeat" />
+              <Route exact="true" element={<Success />} path="/success" />
             </Routes>
           </MoviesContext.Provider>
         </div>
