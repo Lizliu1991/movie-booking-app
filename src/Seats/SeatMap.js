@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 import BookSeat from './BookSeat';
-import { Button } from 'react-bootstrap'
+
 import SelectedSeats from './SelectedSeats';
 
 function SeatMap({ seats, setSeats }) {
@@ -36,7 +37,7 @@ function SeatMap({ seats, setSeats }) {
             <div className="flex items-center justify-between text-2xl">
                 <p className="mr-5"> You have selected: {total} seat(s),</p>
                 <p className="mr-3">{36 - total} availble</p>
-                <Button variant="primary" onClick={() => navigate("/success")} >
+                <Button  variant='primary'   onClick={() => navigate("/success")} >
                     Confirm
                     </Button>
 

@@ -30,12 +30,12 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Header />
-
+       
+      <Header />
         <div>
           <MoviesContext.Provider value={{ movies, setMovies }}>
             <Routes>
-              <Route exact="true" element={<MovieList />} path="/" />
+              <Route  exact="true" element={<MovieList />} path="/" />
               <Route exact="true" element={<MovieChoosen />} path="/:id" />
               <Route exact="true" element={<BookSeat />} path="/bookSeat" />
               <Route exact="true" element={<Success />} path="/success" />

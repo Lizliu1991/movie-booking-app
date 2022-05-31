@@ -5,10 +5,7 @@ import {
   Modal,
   Form,
   FormLabel,
-  FormControl,
-  DropdownButton,
-  Dropdown
-
+  FormControl
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -23,14 +20,15 @@ function Movie({
 
   const time1 = "10:am";
   const time2 = "3:00pm";
-  const time3 = "5:pm"
+  const time3 = "5:pm";
+  const [timeChoosen, setTimeChoosen] = useState("")
   const history = useNavigate();
 
   return (
     <div>
       <Container fluid className="flex items-center m-5">
         <img
-        className="w-1/3  top-0"
+          className="w-1/3  top-0"
           src={"https://image.tmdb.org/t/p/w500" + backdrop_path}
           alt={backdrop_path}
         />
@@ -40,7 +38,7 @@ function Movie({
           <p><span className="uppercase font-semibold mr-3" >Release Date: </span>{release_date} </p>
           <p><span className="uppercase font-semibold mr-3">Rating: </span>{vote_average}</p>
           <p> <span className="uppercase font-semibold mr-3">Overview:</span> {overview}</p>
-          
+
           <Button variant="primary" onClick={() => setShow(true)}>
             Book Ticket
           </Button>
@@ -63,16 +61,12 @@ function Movie({
             <FormLabel>Select Date</FormLabel>
             <FormControl type="date" placeholder="Select Date"></FormControl>
           </Form>
-          <div className="flex items-center">
-
-          <DropdownButton variant="secondary" id="dropdown-item-button" title="Select Time" className="mb-5 mt-5">
-
-  <Dropdown.Item as="button">{time1}</Dropdown.Item>
-  <Dropdown.Item as="button">{time2}</Dropdown.Item>
-  <Dropdown.Item as="button">{time3}</Dropdown.Item>
-</DropdownButton>
-         
+          <div className="flex items-center mx-5 ">
+            <button className="bg-blue-400  px-3 m-3 focus:ring focus:ring-blue-300  " onClick={() => setTimeChoosen(time1)}>{time1}</button>
+            <button className="bg-blue-400  px-3 m-3 focus:ring focus:ring-blue-300" onClick={() => setTimeChoosen(time2)}>{time2}</button>
+            <button className="bg-blue-400  px-3 m-3 focus:ring focus:ring-blue-300" onClick={() => setTimeChoosen(time3)}>{time3}</button>
           </div>
+          <p> {timeChoosen}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={() => history("/bookSeat")}>
