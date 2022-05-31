@@ -7,19 +7,24 @@ function BookSeat({ item,total,setTotal,id,items,setItems,index}) {
     
 
     const handleClick = () => {
-       
         setClick(!click);
-      if(!click){
-        setItems(items => [item, ...items])
-        setTotal(prev => prev + 1)
+      if(click){
+        //delete item
+        setItems(items.filter(res => res !== item))
+  
+     
+      console.log(items.length);
+    
+      setTotal(prev => prev - 1)
        
       }else{
-         //delete item
-          console.log(items);
-          setTotal(prev => prev - 1)
+        //add item
+        setItems(items => [item, ...items])
+        setTotal(prev => prev + 1)
       }
-
     }
+
+   
 
 
     return (
