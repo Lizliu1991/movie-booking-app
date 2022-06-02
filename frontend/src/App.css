@@ -1,0 +1,22 @@
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing:border-box; 
+
+}
+
+.App {
+  text-align: center;
+}
+
+
+img {
+  height: 30vh;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.seats {
+  width: 400px;
+  height: 400px;
+  }
+
